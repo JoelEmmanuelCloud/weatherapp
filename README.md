@@ -4,7 +4,7 @@ The Weather App is a simple web application that allows users to get weather inf
 
 ## Features
 
-- Enter the desired location to retrieve weather information.
+- Enter your desired location to retrieve weather information.
 - Display the weather description for the provided location.
 - Handle errors gracefully when weather information is not available or an error occurs.
 
@@ -32,7 +32,7 @@ cd weatherapp
 ```
 
 
-3. Install the dependencies:
+3. Install dependencies:
 
 ```bash
 npm install
@@ -40,10 +40,12 @@ npm install
 
 4. Create a `.env` file in the root directory and add your OpenWeatherMap API key:
 
+``` bash
 API_KEY=your_api_key
+```
 
 
-5. Start the application:
+5. To start the application:
 
 ```bash
 npm start
@@ -55,7 +57,7 @@ npm start
 
 ## Usage
 
-1. Enter the desired location in the input field.
+1. Enter your desired location in the input field.
 2. Click the "Get Weather" button.
 3. The app will display the weather description for the provided location.
 4. If an error occurs or weather information is not available, an appropriate message will be displayed.
