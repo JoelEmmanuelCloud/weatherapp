@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Weather App</h1>
+    <form action="/weather" method="GET">
+        <label for="location">Enter Location:</label> 
+        <input type="text" id="location" name="city" required>
+        <br>
+        <button type="submit">Get Weather</button>
+    </form>
+    <div class="result"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript code to handle form submission and update result div
+        $(document).ready(function () {
+            $('form').submit(function (event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                // Get the city value from the input field
+                var city = $('#location').val();
+
+                // Make an AJAX request to the server
+                $.get('/weather', { city: city }, function (data) {
+                    $('.result').html('<p class="success">' + data + '</p>');
+                }).fail(function () {
+                    $('.result').html('<p class="error">An error occurred</p>');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
