@@ -1,4 +1,4 @@
-require('dotenv').config;()
+require('dotenv').config();
 const express = require('express');
 const request = require('request');
 const app = express();
@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 app.get('/weather', (req, res) => {
     
-    let city = req.query.city
+    let city = req.query.city;
     let api_key = process.env.API_KEY;
     
     request(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`, 
